@@ -1,6 +1,7 @@
 package kj.util;
 
 import kj.mapper.DocMapper;
+import lombok.extern.java.Log;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,6 +10,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.util.function.Consumer;
 
+
+@Log
 public class SqlUtil {
 
     private static SqlSessionFactory sqlSessionFactory;
@@ -17,7 +20,7 @@ public class SqlUtil {
         try {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("mybatis-config.xml"));
         } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
 
